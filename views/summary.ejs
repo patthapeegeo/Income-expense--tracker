@@ -1,0 +1,35 @@
+<%- include('layouts/head.ejs') %>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script defer type="text/javascript" src="js/summary.js"></script>
+</head>
+  <%- include('layouts/navigation.ejs') %>
+    <main class="container-lg d-flex">  
+      <section id="incomes-summary" class="mt-3 d-flex flex-column align-items-center flex-fill" style="height: 300px">
+        <h1>
+          <strong>Income Summary</strong>
+        </h1>
+
+        <canvas  id="incomes-chart" data-incomes="<%= JSON.stringify(incomes) %>"></canvas>
+
+          <h3>
+            Summary <%= summary.toLocaleString() %> ฿
+          </h3>
+      </section>
+
+  <section id="expenses-summary" class="mt-3 flex-column align-items-center flex-fill" style= "height: 300px;">
+    <h1>
+      <strong>Expense Summary</strong>
+    </h1>
+
+    <canvas id="expenses-chart" data-expenses="<%=JSON.stringify(expenses) %>" 
+      style="margin-bottom: 1rem"></canvas>
+
+    <h3>
+      Summary <%= sumExpense.toLocaleString() %> ฿
+    </h3>
+  </section>
+
+  </main>
+
+
+    <%- include('layouts/foot.ejs') %>
